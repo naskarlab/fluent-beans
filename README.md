@@ -2,6 +2,14 @@
 
 Fluent Beans is a small library for java that you can create fluent java beans.
 
+## Features
+
+- Standard get/set properties in java;
+- Easily binding between domain classes;
+
+
+## Examples
+
 ```
 
 @Test
