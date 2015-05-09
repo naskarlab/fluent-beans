@@ -69,3 +69,56 @@ public class Account {
 
 ```
 
+
+You too can to create easily binding classes between the UI model classes and domain or value objects due the Property class:
+
+```
+
+/**
+ * A simple reference to a value.
+ *  
+ * @param <T> type of the value.
+ */
+public interface Value<T> {
+	
+	/**
+	 * Gets the value.
+	 * 
+	 * @return the current value.
+	 */
+	T get();
+}
+
+```
+
+```
+
+/**
+ * A value that can be changed.
+ *  
+ * @param <T> type of value.
+ */
+interface MutableValue<T> extends Value<T> {
+	
+	/**
+	 * Sets the value.
+	 * 
+	 * @param value a new value
+	 * @return the enclosing instance, if any, otherwise null.
+	 */
+	<E> E set(T value);
+}
+
+```
+
+```
+
+public final class Property<T> implements MutableValue<T> {
+
+	...
+
+}
+ 
+```
+
+ 
