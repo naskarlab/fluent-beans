@@ -5,7 +5,7 @@ package com.naskar.fluentbeans;
  *  
  * @param <T> type of value.
  */
-interface MutableValue<T> extends Value<T> {
+public interface MutableValue<T> extends Value<T> {
 	
 	/**
 	 * Sets the value.

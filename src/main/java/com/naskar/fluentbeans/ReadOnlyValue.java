@@ -3,7 +3,7 @@ package com.naskar.fluentbeans;
 /**
  * Limits the access to a value to read only.
  *
- * @param <T>
+ * @param <T> type of the value
  */
 public final class ReadOnlyValue<T> implements Value<T> {
 	

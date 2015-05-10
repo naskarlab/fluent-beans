@@ -40,7 +40,7 @@ public final class Property<T> implements MutableValue<T> {
 	
 	/**
 	 * A read-only access to value.
-	 * @return
+	 * @return value.
 	 */
 	public Value<T> value() {
 		return new ReadOnlyValue<T>(value); 
@@ -49,6 +49,42 @@ public final class Property<T> implements MutableValue<T> {
 	@Override
 	public String toString() {
 		return value != null ? value.toString() : "null";
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + ((value == null) ? 0 : value.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		
+		if (this == obj) {
+			return true;
+		}
+		
+		if (obj == null) {
+			return false;
+		}
+		
+		if (!(obj instanceof Property)) {
+			return false;
+		}
+		
+		Property<?> other = (Property<?>) obj;
+		if (value == null) {
+			if (other.value != null) {
+				return false;
+			}
+			
+		} else if (!value.equals(other.value)) {
+			return false;
+		}
+		
+		return true;
 	}
 
 }
